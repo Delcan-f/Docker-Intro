@@ -1,2 +1,8 @@
-# Docker-Intro
-Introduction to Docker and Containerising a simple application
+# Introduction to Docker and Containerising a basic applicaiton 
+
+## Docker Commands 
+
+View All Containers - docker ps -a
+View the Logs - docker logs <container_id>
+Stop the Docker - docker stop <name>
+cl
