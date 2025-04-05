@@ -5,6 +5,8 @@ services:
       - "27017:27017"
     volumes:
       - mongo-data:/data/db
+    networks:
+      - backend
   express:
     build: .
     ports:
@@ -13,9 +15,23 @@ services:
       - .env
     depends_on:
       - mongo
+    networks:
+      - backend
+      - frontend
+  # reactApp:
+  #   image: react
+  #   ports:
+  #     - "5000:5000"
+  #   networks:
+  #     - frontend
 volumes:
   mongo-data:
     driver: local
+networks:
+  backend:
+    driver: bridge
+  frontend:
+    driver: bridge
 
     
     
